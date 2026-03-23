@@ -7,7 +7,6 @@ The pipeline ingests both batch and simulated streaming data, processes it incre
 
 The primary goal is to demonstrate how modern data platforms can support scalable, automated, and maintainable data pipelines.
 
----
 
 ## 🏗️ Architecture
 
@@ -34,7 +33,6 @@ The project follows the Medallion Architecture pattern:
   - Marketing performance tracking
   - Funnel conversion analysis
 
----
 
 ## ⚙️ Data Pipeline & Orchestration
 
@@ -46,7 +44,6 @@ The project follows the Medallion Architecture pattern:
   - Gold layer (depends on Silver)
 - Supports incremental processing
 
----
 
 ## 📊 Data Model
 
@@ -81,7 +78,6 @@ This dataset supports multiple analytical scenarios:
 - Sales and revenue reporting
 - Delivery performance and logistics insights
 
----
 
 ## 🧪 Data Sources
 
@@ -90,7 +86,6 @@ This dataset supports multiple analytical scenarios:
   - Web events (user activity)
   - Ads data (campaign performance)
 
----
 
 ## 🛠️ Tech Stack
 
@@ -101,7 +96,6 @@ This dataset supports multiple analytical scenarios:
 - Databricks Asset Bundles (deployment & IaC)
 - GitHub (version control)
 
----
 
 ## 🚀 Key Features
 
@@ -111,7 +105,6 @@ This dataset supports multiple analytical scenarios:
 - Job orchestration with dependency management
 - Version-controlled deployment using GitHub + Bundles
 
----
 
 ## 📈 Notes
 
