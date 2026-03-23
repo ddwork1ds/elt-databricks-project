@@ -1,0 +1,12 @@
+resources:
+  jobs:
+    csv_job:
+      name: CSV_to_bronze
+      schedule:
+        quartz_cron_expression: "0 0 0 ? * MON"
+        timezone_id: "Asia/Ho_Chi_Minh"
+        pause_status: "UNPAUSED"
+      tasks:
+        - task_key: ADS
+          notebook_task:
+            notebook_path: ../src/bronze/CSV_table_autoloader.ipynb

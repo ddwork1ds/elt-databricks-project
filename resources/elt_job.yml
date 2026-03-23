@@ -1,0 +1,29 @@
+resources:
+  jobs:
+    elt:
+      name: ELT
+      schedule:
+        quartz_cron_expression: "0 0 5 ? * MON"
+        timezone_id: "Asia/Ho_Chi_Minh"
+        pause_status: "UNPAUSED"
+      tasks:
+        - task_key: ADS
+          notebook_task:
+            notebook_path: ../src/bronze/ads_autoloader.ipynb
+
+        - task_key: WEB
+          notebook_task:
+            notebook_path: ../src/bronze/web_autoloader.ipynb
+
+        - task_key: run_silver
+          depends_on:
+            - task_key: ADS
+            - task_key: WEB
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.silver_pipeline.id}
+
+        - task_key: run_gold
+          depends_on:
+            - task_key: run_silver
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.gold_pipeline.id}

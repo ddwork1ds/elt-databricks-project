@@ -1,0 +1,43 @@
+resources:
+  pipelines:
+    silver_pipeline:
+      name: Silver
+      catalog: workspace
+      schema: 02_silver
+      serverless: true
+      continuous: false
+      libraries:
+        - file:
+            path: ../src/silver/category_translation.py
+        - file:
+            path: ../src/silver/customers.py
+        - file:
+            path: ../src/silver/geolocation.py
+        - file:
+            path: ../src/silver/orders.py
+        - file:
+            path: ../src/silver/order_items.py
+        - file:
+            path: ../src/silver/order_payments.py
+        - file:
+            path: ../src/silver/order_reviews.py
+        - file:
+            path: ../src/silver/products.py
+        - file:
+            path: ../src/silver/products_enriched.py
+        - file:
+            path: ../src/silver/sellers.py
+        - file:
+            path: ../src/silver/web_events.py
+        - file:
+            path: ../src/silver/ads_campaigns.py
+        - file:
+            path: ../src/silver/bridge_identity.py
+        - file:
+            path: ../src/silver/bridge_campaign_mapping.py
+        - file:
+            path: ../src/silver/quarantine_web_events.py
+        - file:
+            path: ../src/silver/reconciliation_orders_payments.py
+        - file:
+            path: ../src/silver/referential_integrity_issues.py

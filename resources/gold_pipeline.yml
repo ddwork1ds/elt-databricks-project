@@ -1,0 +1,39 @@
+resources:
+  pipelines:
+    gold_pipeline:
+      name: Gold
+      catalog: workspace
+      schema: 03_gold
+      serverless: true
+      continuous: false
+      libraries:
+        - file:
+            path: ../src/gold/dim_campaign.py
+        - file:
+            path: ../src/gold/dim_channel.py
+        - file:
+            path: ../src/gold/dim_customer.py
+        - file:
+            path: ../src/gold/dim_date.py
+        - file:
+            path: ../src/gold/dim_geolocation.py
+        - file:
+            path: ../src/gold/dim_product.py
+        - file:
+            path: ../src/gold/dim_sellers.py
+        - file:
+            path: ../src/gold/fact_marketing_spend_daily.py
+        - file:
+            path: ../src/gold/fact_order_delivery.py
+        - file:
+            path: ../src/gold/fact_order_items.py
+        - file:
+            path: ../src/gold/fact_orders.py
+        - file:
+            path: ../src/gold/fact_web_funnel_daily.py
+        - file:
+            path: ../src/gold/kpi_daily.py
+        - file:
+            path: ../src/gold/mart_customer_summary.py
+        - file:
+            path: ../src/gold/mart_sales_marketing_360.py
