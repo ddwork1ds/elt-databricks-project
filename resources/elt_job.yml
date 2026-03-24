@@ -14,11 +14,16 @@ resources:
         - task_key: WEB
           notebook_task:
             notebook_path: ../src/bronze/web_autoloader.ipynb
+        
+        - task_key: Csv
+          notebook_task:
+            notebook_path: ../src/bronze/CSV_table_autoloader.ipynb
 
         - task_key: run_silver
           depends_on:
             - task_key: ADS
             - task_key: WEB
+            - task_key: Csv
           pipeline_task:
             pipeline_id: ${resources.pipelines.silver_pipeline.id}
 
