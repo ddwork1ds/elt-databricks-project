@@ -2,7 +2,7 @@ from pyspark import pipelines as dp
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
-@dp.materialized_view(name="silver_web_events_dev")
+@dp.materialized_view(name="silver_web_events")
 def silver_web_events():
 
     df = spark.read.table("workspace.01_bronze.bronze_web_events")
